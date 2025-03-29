@@ -1,12 +1,11 @@
-<% content_for :title, "Editing task" %>
+<%= turbo_frame_tag @task do %>
+  <% content_for :title, "Editing task" %>
 
-<h1>Editing task</h1>
+  <%= form_with(model: @task, local: false) do |form| %>
+    <%= form.text_field :title %>
+    <%= form.submit "更新" %>
+  <% end %>
 
-<%= render "form", task: @task %>
-
-<br>
-
-<div>
-  <%= link_to "Show this task", @task %> |
-  <%= link_to "Back to tasks", tasks_path %>
-</div>
+  <%= button_to "削除", @task, method: :delete, data: { turbo_confirm: "本当に削除しますか？" } %>
+  <%= link_to "キャンセル", tasks_path %>
+<% end %>

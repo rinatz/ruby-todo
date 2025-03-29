@@ -1,12 +1,7 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Title:</strong>
-    <%= task.title %>
-  </p>
-
-  <p>
-    <strong>Done:</strong>
-    <%= task.done %>
-  </p>
-
-</div>
+<%= turbo_frame_tag task do %>
+  <div>
+    <%= check_box_tag dom_id(task), task.id, task.done %>
+    <%= label_tag dom_id(task), task.title %> |
+    <%= link_to "編集", edit_task_path(task) %>
+  </div>
+<% end %>
