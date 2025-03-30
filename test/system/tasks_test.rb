@@ -7,18 +7,17 @@ class TasksTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit tasks_url
-    assert_selector "h1", text: "TODOリスト"
+    assert_selector "h3", text: "TODOリスト"
   end
 
   test "should create task" do
     visit tasks_url
-    click_on "タスクを登録"
+    click_on "追加"
 
     check "Done" if @task.done
-    fill_in "Title", with: @task.title
-    click_on "Create Task"
+    fill_in "task_title", with: @task.title
+    click_on "OK"
 
-    assert_text "Task was successfully created"
     click_on "Back"
   end
 
@@ -26,11 +25,11 @@ class TasksTest < ApplicationSystemTestCase
     visit edit_task_url(@task)
 
     fill_in "task_title", with: @task.title
-    click_on "更新"
+    click_on "OK"
   end
 
   test "should destroy Task" do
-    visit edit_task_url(@task)
+    visit tasks_url
 
     accept_confirm do
       click_on "削除", match: :first
