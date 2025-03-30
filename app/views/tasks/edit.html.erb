@@ -1,6 +1,4 @@
 <%= turbo_frame_tag @task do %>
-  <% content_for :title, "Editing task" %>
-
   <%= form_with(model: @task, local: false) do |form| %>
     <%= form.text_field :title %>
     <%= form.submit "更新" %>
