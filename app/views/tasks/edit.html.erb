@@ -1,9 +1,3 @@
 <%= turbo_frame_tag @task do %>
-  <%= form_with(model: @task, local: false) do |form| %>
-    <%= form.text_field :title %>
-    <%= form.submit "更新" %>
-  <% end %>
-
-  <%= button_to "削除", @task, method: :delete, data: { turbo_confirm: "本当に削除しますか？" } %>
-  <%= link_to "キャンセル", tasks_path %>
+  <%= render "form", task: @task %>
 <% end %>

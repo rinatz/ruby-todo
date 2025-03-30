@@ -1,27 +1,14 @@
-<%= form_with(model: task) do |form| %>
-  <% if task.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-        <% task.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= turbo_frame_tag task do %>
+  <%= form_with(model: task) do |form| %>
+    <div class="row">
+      <div class="col-4"><%= check_box_tag dom_id(task), task.id, task.done, class: "form-check-input" %></div>
+      <div class="col-4"><%= form.text_field :title %></div>
+      <div class="col-4">
+        <div class="d-flex">
+          <%= form.submit "OK", class: "btn btn-sm btn-primary" %>
+          <%= link_to "キャンセル", tasks_path, class: "btn btn-sm btn-outline-primary" %>
+          </div>
+      </div>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :done, style: "display: block" %>
-    <%= form.checkbox :done %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -1,9 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>TODOリスト</h1>
+<h3>TODOリスト</h3>
 
-<%= link_to "タスクを登録", new_task_path %>
+<div class="card-body">
+  <div class="row">
+    <div class="col-4">完了</div>
+    <div class="col-4">タイトル</div>
+    <div class="col-4"><%= link_to "追加", new_task_path, class: "btn btn-sm btn-outline-primary" %></div>
+  </div>
 
-<div id="tasks">
   <%= render @tasks %>
 </div>
