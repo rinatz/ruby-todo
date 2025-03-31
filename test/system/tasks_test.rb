@@ -14,11 +14,8 @@ class TasksTest < ApplicationSystemTestCase
     visit tasks_url
     click_on "追加"
 
-    check "Done" if @task.done
     fill_in "task_title", with: @task.title
     click_on "OK"
-
-    click_on "Back"
   end
 
   test "should update Task" do
