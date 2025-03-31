@@ -1,6 +1,10 @@
 <%= turbo_frame_tag task do %>
   <div class="row border-top">
-    <div class="col-4"><%= checkbox_tag :done, class: "form-check-input" %></div>
+    <div class="col-4">
+      <%= form_with(model: task, method: :patch) do |form| %>
+        <%= form.check_box :done, onchange: "this.form.requestSubmit()", class: "form-check-input" %>
+      <% end %>
+    </div>
     <div class="col-4"><%= task.title %></div>
     <div class="col-4">
       <div class="d-flex">
