@@ -1,4 +1,4 @@
-<%= turbo_frame_tag dom_id(task) do %>
+<%= turbo_frame_tag task do %>
   <%= form_with(model: task) do |form| %>
     <div class="row">
       <div class="col-4"><%= form.checkbox :done, class: "form-check-input" %></div>
