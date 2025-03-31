@@ -1,6 +1,6 @@
 <%= form_with(model: task) do |form| %>
   <div class="row">
-    <div class="col-4"><%= form.checkbox :done, class: "form-check-input", disabled: true %></div>
+    <div class="col-4"><%= form.check_box :done, class: "form-check-input", disabled: true %></div>
     <div class="col-4"><%= form.text_field :title %></div>
     <div class="col-4">
       <div class="d-flex">
