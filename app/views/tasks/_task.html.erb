@@ -1,6 +1,8 @@
-<%= turbo_frame_tag task do %>
+<%= turbo_frame_tag dom_id(task) do %>
   <div class="row border-top">
-    <div class="col-4"><%= check_box_tag dom_id(task, :done), task.id, task.done, class: "form-check-input" %></div>
+    <div class="col-4">
+      <%= form.checkbox :done, class: "form-check-input" %>
+    </div>
     <div class="col-4"><%= task.title %></div>
     <div class="col-4">
       <div class="d-flex">
