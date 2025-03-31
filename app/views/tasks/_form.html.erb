@@ -1,14 +1,12 @@
-<%= turbo_frame_tag task do %>
-  <%= form_with(model: task) do |form| %>
-    <div class="row">
-      <div class="col-4"><%= form.checkbox :done, class: "form-check-input" %></div>
-      <div class="col-4"><%= form.text_field :title %></div>
-      <div class="col-4">
-        <div class="d-flex">
-          <%= form.submit "OK", class: "btn btn-sm btn-primary" %>
-          <%= link_to "キャンセル", tasks_path, class: "btn btn-sm btn-outline-primary" %>
-          </div>
+<%= form_with(model: task) do |form| %>
+  <div class="row">
+    <div class="col-4"><%= form.checkbox :done, class: "form-check-input", disabled: true %></div>
+    <div class="col-4"><%= form.text_field :title %></div>
+    <div class="col-4">
+      <div class="d-flex">
+        <%= form.submit "OK", class: "btn btn-sm btn-primary" %>
+        <%= link_to "キャンセル", tasks_path, class: "btn btn-sm btn-outline-primary" %>
       </div>
     </div>
-  <% end %>
+  </div>
 <% end %>
