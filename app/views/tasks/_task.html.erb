@@ -1,15 +1,17 @@
 <%= turbo_frame_tag task do %>
-  <div class="row border-top">
+  <div class="row border-top py-2">
     <div class="col-4">
       <%= form_with(model: task, method: :patch) do |form| %>
         <%= form.check_box :done, onchange: "this.form.requestSubmit()", class: "form-check-input" %>
       <% end %>
     </div>
+
     <div class="col-4 <%= "text-decoration-line-through text-secondary" if task.done %>">
       <%= task.title %>
     </div>
+
     <div class="col-4">
-      <div class="d-flex">
+      <div class="d-flex justify-content-end align-items-center">
         <%= link_to "編集", edit_task_path(task), class: "btn btn-sm btn-outline-primary" %>
         <%= button_to "削除", task, method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }, class: "btn btn-sm btn-outline-danger" %>
       </div>

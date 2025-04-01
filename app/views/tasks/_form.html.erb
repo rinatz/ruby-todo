@@ -1,11 +1,17 @@
 <%= form_with(model: task) do |form| %>
-  <div class="row">
-    <div class="col-4"><%= form.check_box :done, class: "form-check-input", disabled: true %></div>
-    <div class="col-4"><%= form.text_field :title %></div>
+  <div class="row border-top py-2">
     <div class="col-4">
-      <div class="d-flex">
-        <%= form.submit "OK", class: "btn btn-sm btn-primary" %>
-        <%= link_to "キャンセル", tasks_path, class: "btn btn-sm btn-outline-primary" %>
+      <%= form.check_box :done, class: "form-check-input", disabled: true %>
+    </div>
+
+    <div class="col-4">
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="col-4">
+      <div class="d-flex justify-content-end align-items-center">
+        <%= form.submit "OK", class: "btn btn-sm btn-success" %>
+        <%= link_to "キャンセル", tasks_path, class: "btn btn-sm btn-outline-secondary" %>
       </div>
     </div>
   </div>
