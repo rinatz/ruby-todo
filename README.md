@@ -1,24 +1,25 @@
-# README
+# ruby-todo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+学習用に作成した Ruby TODO リストです。
 
-Things you may want to cover:
+## 開発環境
 
-* Ruby version
+- Ruby: 3.4.2
+- Ruby on Rails: 8.0.2
+- データベース: SQLite
+- UI: Bootstrap
+- View: ERB
 
-* System dependencies
+## インストール
 
-* Configuration
+```bash
+$ bundle install
+```
 
-* Database creation
+## 起動
 
-* Database initialization
+```bash
+$ ./bin/dev
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://localhost:3000/ でアクセスできます。
