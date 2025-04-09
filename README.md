@@ -1,14 +1,13 @@
-# ruby-todo
+# rails-todo
 
-学習用に作成した Ruby TODO リストです。
+学習用に作成した Rails 製の TODO リストです。
 
 ## 開発環境
 
-- Ruby: 3.4.2
-- Ruby on Rails: 8.0.2
-- データベース: SQLite
-- UI: Bootstrap
-- View: ERB
+- Ruby on Rails
+- SQLite
+- Bootstrap
+- ERB
 
 ## インストール
 
